@@ -11,7 +11,6 @@ const player = new Plyr("#player", {
   captions: {
     active: true,
     language: "auto",
-    update: true
   },
 
   tooltips: { 
