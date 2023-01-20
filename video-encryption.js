@@ -1,4 +1,4 @@
-/*var video_encryption = {
+var video_encryption = {
     mediaSource:new MediaSource(),
 
     checkSupported: function (cb) {
@@ -45,18 +45,4 @@
         };
         xhr.send();
     }
-};*/
-
-var video = document.getElementById('player');
-var mediaSource = url;
-video.src = URL.createObjectURL(mediaSource);
-mediaSource.addEventListener('sourceopen', sourceOpen)
-
-function sourceOpen () {
-  var mediaSource = this;
-  var sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.42E01E, avc1.640028, mp4a.40.2"');
-  sourceBuffer.addEventListener('updateend', function () {
-    mediaSource.endOfStream();
-  });
-  sourceBuffer.appendBuffer(buf);
 };
