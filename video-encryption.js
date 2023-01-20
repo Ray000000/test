@@ -48,7 +48,7 @@
 };*/
 
 var video = document.querySelector('video');
-var mediaSource = new MediaSource;
+var mediaSource = url;
 video.src = URL.createObjectURL(mediaSource);
 mediaSource.addEventListener('sourceopen', sourceOpen)
 
