@@ -3,21 +3,14 @@
   <title>Vun-Video</title>
   <script src="plyr-citation.js"></script>
 </head>
-<div class="tips close-box" style="background-color: #181515;">
-  <a class="tips-close-btn pull-right" href="javascript:;"><i class="fa fa-close"></i></a>
-  <ul style="margin-top: -22.185px;">
-  <li>正在播放：49日-02</li>
-  <li><i class="fa fa-volume-down"></i> 如果無法播放請重新刷新頁面，或者切換線路。</li>
-  <li>視頻載入速度跟網速有關，請耐心等待幾秒鐘。</li></ul>
-</div>
 <video id="player" playsinline controls data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
   <source type="video/mp4" size="1080" default>
   <!-- source src="" type="video/mp4" size="" default -->
 </video>
 <script src="plyr-main.min.js"></script>
-<script src="postbird-mp4-to-blob.js"></script>
+<script src="video-encryption.js"></script>
 <script>
-  var url = 'https://ray000000.github.io/test/v0-new.mp4'; // 视频url
-  var mimeCodec = 'video/mp4; codecs="avc1.640028, mp4a.40.2"'; // 编码格式
-  PostbirdMp4ToBlob.init('#player', url, mimeCodec); // #video 是选择器
+  var url = 'https://p1-em-ai.byteimg.com/obj/tos-cn-i-0026/0dd7c4dca2c54d368c32828e329782f5?filename=1.mp4'//'https://ray000000.github.io/test/v0-new.mp4';
+  var mimeCodec = 'video/mp4; codecs="avc1.640028, mp4a.40.2"';
+  video_encryption.init('#player', url, mimeCodec);
 </script>
