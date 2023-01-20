@@ -10,7 +10,7 @@ const player = new Plyr("#player", {
   blankVideo: "https://cdn.plyr.io/static/blank.mp4",
   captions: {
     active: true,
-    //language: "auto",
+    language: "auto",
   },
 
   tooltips: { 
