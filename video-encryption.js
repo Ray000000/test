@@ -47,7 +47,7 @@
     }
 };*/
 
-var video = document.querySelector('video');
+var video = document.getElementById('player');
 var mediaSource = url;
 video.src = URL.createObjectURL(mediaSource);
 mediaSource.addEventListener('sourceopen', sourceOpen)
