@@ -30,7 +30,6 @@ var video_encryption = {
         this.fetchAB(this.assetUrl, function (buf) {
             sourceBuffer.addEventListener('updateend', function (_) {
                 _this.mediaSource.endOfStream();
-                _this.video.play();
                 console.log(_this.mediaSource.readyState);
             });
             sourceBuffer.appendBuffer(buf);
