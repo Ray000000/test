@@ -60,13 +60,3 @@ function sourceOpen () {
   });
   sourceBuffer.appendBuffer(buf);
 };
-
-function sourceBuffer (url) {
-    var xhr = new XMLHttpRequest;
-    xhr.open('GET', url, true);
-    xhr.responseType = 'arraybuffer';
-    xhr.onload = function () {
-        cb(xhr.response);
-    };
-    xhr.send();
-}
