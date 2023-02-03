@@ -1,15 +1,17 @@
+## Protect .htaccess ##
 <files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
 deny from all
 satisfy all
 </files>
 
+## Protect WP-Config.php ##
 <files wp-config.php>
 order allow,deny
 deny from all
 </files>
 
-## Block the include-only files. ##
+## Protect Include-Only ##
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
@@ -20,13 +22,7 @@ RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
 RewriteRule ^wp-includes/theme-compat/ - [F,L]
 </IfModule>
 
-## Maintenance page ##
-# RewriteEngine on
-# RewriteCond %{REQUEST_URI} !/maintenance.html$
-# RewriteCond %{REMOTE_ADDR} !^123\.123\.123\.123
-# RewriteRule $ /maintenance.html [R=302,L]
-
-# disable directory browsing
+## Disable Directory Browsing ##
 Options All -Indexes
 
 ## EXPIRES CACHING ##
@@ -43,20 +39,20 @@ ExpiresByType application/x-shockwave-flash "access 1 month"
 ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 2 days"
 </IfModule>
-## EXPIRES CACHING ##
 
+## Forbidden image links ##
 RewriteEngine on
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourwebsite.com [NC]
 RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourotherwebsite.com [NC]
 RewriteRule \.(jpg|jpeg|png|gif)$ https://i.imgur.com/g7ptdBB.png [NC,R,L]
 
-## Remove .html ##
+## Remove url.html ##
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-## Remove .php ##
+## Remove url.php ##
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
