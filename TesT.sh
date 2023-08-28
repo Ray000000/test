@@ -5,7 +5,7 @@ echo "歡迎使用自定義 shell！"
 echo "請選擇您要執行的任務："
 echo "1. 更新並檢測系統"
 echo "2. 打開終端"
-echo "3. 退出"
+echo "0. 退出"
 
 read choice
 
@@ -13,16 +13,13 @@ read choice
 
 case $choice in
   1)
-    lsb_release -a
     apt update -y && apt full-upgrade -y && apt upgrade -y && apt autoremove -y && apt autoclean -y
-    echo "OS：$"
-    echo "代號：$(lsb_release -sc)"
-    echo "Linux 內核：$(uname -r)"
+    lsb_release -a
     ;;
   2)
     gnome-terminal
     ;;
-  3)
+  0)
     exit
     ;;
   *)
