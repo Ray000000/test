@@ -7,7 +7,7 @@ echo "1. 更新並檢測系統"
 echo "2. 打開終端"
 echo "0. 退出"
 
-請輸入選項：read choice
+read choice
 
 # 根據用戶選擇執行操作
 
