@@ -15,8 +15,8 @@ case $choice in
   1)
     lsb_release -a
     apt update -y && apt full-upgrade -y && apt upgrade -y && apt autoremove -y && apt autoclean -y
-    echo "OS：$(lsb_release -sc)"
-    echo "代號：$(lsb_release -r)"
+    echo "OS：$"
+    echo "代號：$(lsb_release -sc)"
     echo "Linux 內核：$(uname -r)"
     ;;
   2)
