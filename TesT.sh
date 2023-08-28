@@ -14,7 +14,7 @@ echo "0. 退出"
 case $choice in
   1)
     apt update -y && apt full-upgrade -y && apt upgrade -y && apt autoremove -y && apt autoclean -y
-    lsb_release -a
+    \e[38;5;34mlsb_release -a\e[0m
     ;;
   2)
     gnome-terminal
